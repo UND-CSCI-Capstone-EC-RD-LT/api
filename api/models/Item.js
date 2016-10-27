@@ -66,10 +66,16 @@ module.exports = {
                                 if (err || !type) return next(sails.config.additionals.ITEMTYPE_NOT_FOUND);
                                 return next();
                             });
+                        } else {
+                            return next();
                         }
                     });
+                } else {
+                    return next();
                 }
             });
+        } else {
+            return next();
         }
     },
 };

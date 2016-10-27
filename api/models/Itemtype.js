@@ -43,6 +43,8 @@ module.exports = {
                 if (err || !user) return next(sails.config.additionals.USER_NOT_FOUND);
                 return next();
             });
+        } else {
+            return next();
         }
     },
 };
