@@ -18,5 +18,8 @@ module.exports = {
   	'GET /v1/rooms/items' : 'RoomController.items',
     'GET /v1/rooms/building/:id' : 'RoomController.building',
   	'GET /v1/itemtypes/:id/items' : 'ItemtypeController.item',
+    'GET /v1/items/search/:did' : 'ItemController.search',
+    'GET /v1/items/search/:did/:bid' : 'ItemController.search',
+    'GET /v1/items/search/:did/:bid/:rid' : 'ItemController.search'
   }
 };

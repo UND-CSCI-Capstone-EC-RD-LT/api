@@ -6,6 +6,12 @@
  */
 
 module.exports = {
-	
+	search: function (req, res, next) {
+		var departmentId = req.param('did');
+		var buildingId = req.param('bid');
+		var roomId = req.param('rid');
+
+		return res.ok(departmentId + " - " + buildingId + " - " + roomId);
+	}
 };
 
