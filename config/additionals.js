@@ -66,6 +66,11 @@ module.exports = {
             message: 'Items not found for event and category',
             status: 404
         },
+        ITEMS_SEARCH_NOT_FOUND: {
+            code: 'E_ITEMS_SEARCH_NOT_FOUND',
+            message: 'Not Items found with for given search',
+            status: 404
+        },
         ITEM_NOT_FOUND: {
             code: 'E_ITEM_NOT_FOUND',
             message: 'Item not found',
