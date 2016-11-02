@@ -11,7 +11,7 @@ module.exports = {
         var buildingId = req.param('bid');
         var roomId = req.param('rid');
 
-        var query = 'SELECT item.*, itemtype.name AS typeName, itemtype.description AS typeDescription ' +
+        query = 'SELECT item.*, itemtype.name AS typeName, itemtype.description AS typeDescription ' +
             'FROM item ' +
             'INNER JOIN ' +
             '(room INNER JOIN ' + 
