@@ -34,7 +34,7 @@ module.exports = {
             required: true
         },
 
-        boughPrice: {
+        boughtPrice: {
             type: 'float',
             defaultsTo: 0.00
         },
