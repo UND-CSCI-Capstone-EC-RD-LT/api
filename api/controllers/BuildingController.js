@@ -19,7 +19,7 @@ module.exports = {
 
 	rooms: function(req, res, next) {
 		Building.find().populate('rooms').exec(function(err, buildings) {
-			if (err || !buildings) return next(sails.config.additionals.BUILDING_NOT_FOUND);
+			if (err || !buildings || buildings.length == 0) return next(sails.config.additionals.BUILDING_NOT_FOUND);
 			return res.ok(buildings);
 		});
 	},

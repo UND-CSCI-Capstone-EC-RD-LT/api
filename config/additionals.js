@@ -89,7 +89,7 @@ module.exports = {
         ROOM_NOT_FOUND: {
             code: 'E_ROOM_NOT_FOUND',
             message: 'Please supply a room name',
-            status: 400
+            status: 404
         },
         CANT_ADD_ROOM: {
             code: 'E_CANT_ADD_ROOM',

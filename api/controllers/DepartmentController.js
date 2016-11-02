@@ -20,7 +20,7 @@ module.exports = {
 
 	buildings: function(req, res, next) {
 		Department.find().populate('buildings').exec(function(err, departments) {
-			if (err || !departments) return next(sails.config.additionals.DEPARTMENT_NOT_FOUND);
+			if (err || !departments || departments.length == 0) return next(sails.config.additionals.DEPARTMENT_NOT_FOUND);
 			return res.ok(departments);
 		});
 	}

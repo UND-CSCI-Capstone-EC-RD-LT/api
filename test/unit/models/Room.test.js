@@ -21,48 +21,37 @@ describe('models:Room', () => {
     });
 
     it('Should create new a Room', done => {
-        Room
-            .create(newRoom)
-            .then(room => {
-                assert.equal(room.id, newRoom.id);
-                done();
-            })
-            .catch(done);
+        Room.create(newRoom).then(room => {
+            assert.equal(room.id, newRoom.id);
+            done();
+        }).catch(done);
     });
 
     it('Should Get Rooms and toJSON last in list', done => {
-        Room
-            .find().then(room => {
-                assert.isNotNull(room.pop().toJSON());
-                done();
-            })
-            .catch(done);
+        Room.find().then(room => {
+            assert.isNotNull(room.pop().toJSON());
+            done();
+        }).catch(done);
     });
 
     it('Should Get Rooms', done => {
-        Room
-            .find().then(room => {
-                assert.isNotNull(room);
-                done();
-            })
-            .catch(done);
+        Room.find().then(room => {
+            assert.isNotNull(room);
+            done();
+        }).catch(done);
     });
 
     it('Should Get Room', done => {
-        Room
-            .findOne(newRoom.id).then(room => {
-                assert.equal(room.id, newRoom.id);
-                done();
-            })
-            .catch(done);
+        Room.findOne(newRoom.id).then(room => {
+            assert.equal(room.id, newRoom.id);
+            done();
+        }).catch(done);
     });
 
     it('Should Update Room', done => {
-        Room
-            .update({ id: newRoom.id }, { number: 2 }).then(room => {
-                assert.notEqual(room, newRoom);
-                done();
-            })
-            .catch(done);
+        Room.update({ id: newRoom.id }, { number: 2 }).then(room => {
+            assert.notEqual(room, newRoom);
+            done();
+        }).catch(done);
     });
 });

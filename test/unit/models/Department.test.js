@@ -16,48 +16,37 @@ describe('models:Department', () => {
     });
 
     it('Should create new a Department', done => {
-        Department
-            .create(newDepartment)
-            .then(department => {
-                assert.equal(department.id, newDepartment.id);
-                done();
-            })
-            .catch(done);
+        Department.create(newDepartment).then(department => {
+            assert.equal(department.id, newDepartment.id);
+            done();
+        }).catch(done);
     });
 
     it('Should Get Departments and toJSON last in list', done => {
-        Department
-            .find().then(department => {
-                assert.isNotNull(department.pop().toJSON());
-                done();
-            })
-            .catch(done);
+        Department.find().then(department => {
+            assert.isNotNull(department.pop().toJSON());
+            done();
+        }).catch(done);
     });
 
     it('Should Get Departments', done => {
-        Department
-            .find().then(department => {
-                assert.isNotNull(department);
-                done();
-            })
-            .catch(done);
+        Department.find().then(department => {
+            assert.isNotNull(department);
+            done();
+        }).catch(done);
     });
 
     it('Should Get Department', done => {
-        Department
-            .findOne(newDepartment.id).then(department => {
-                assert.equal(department.id, newDepartment.id);
-                done();
-            })
-            .catch(done);
+        Department.findOne(newDepartment.id).then(department => {
+            assert.equal(department.id, newDepartment.id);
+            done();
+        }).catch(done);
     });
 
     it('Should Update Department', done => {
-        Department
-            .update({ id: newDepartment.id }, { number: 2 }).then(department => {
-                assert.notEqual(department, newDepartment);
-                done();
-            })
-            .catch(done);
+        Department.update({ id: newDepartment.id }, { number: 2 }).then(department => {
+            assert.notEqual(department, newDepartment);
+            done();
+        }).catch(done);
     });
 });
