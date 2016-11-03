@@ -11,6 +11,11 @@ module.exports = {
         var buildingId = req.param('bid');
         var roomId = req.param('rid');
 
+        if (!req.user.departments) return res.json('User does not have premissions for any department.');
+        if (departmentId && req.user.departments.indexOf(parseInt(departmentId)) == -1) return res.json('User does not have premission to access this department.');
+        if (!req.user.buildings) return res.json('User does not have premissions for any building.');
+        if (buildingId && req.user.buildings.indexOf(parseInt(buildingId)) == -1) return res.json('User does not have premission to access this building.');
+
         query = 'SELECT item.*, itemtype.name AS typeName, itemtype.description AS typeDescription ' +
             'FROM item ' +
             'INNER JOIN ' +

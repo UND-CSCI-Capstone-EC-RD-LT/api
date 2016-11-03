@@ -32,37 +32,37 @@ module.exports = {
 
         users: {
             type: 'json',
-            defaultsTo: null
+            defaultsTo: {}
         },
 
         premissions: {
             type: 'json',
-            defaultsTo: null
+            defaultsTo: {}
         },
 
         departments: {
             type: 'json',
-            defaultsTo: null
+            defaultsTo: {}
         },
 
         buildings: {
             type: 'json',
-            defaultsTo: null
+            defaultsTo: {}
         },
 
         rooms: {
             type: 'json',
-            defaultsTo: null
+            defaultsTo: {}
         },
 
         items: {
             type: 'json',
-            defaultsTo: null
+            defaultsTo: {}
         },
 
         itemtypes: {
             type: 'json',
-            defaultsTo: null
+            defaultsTo: {}
         },
 
         toJSON() {
