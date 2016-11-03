@@ -9,24 +9,34 @@
 
 module.exports = {
     additionals: {
+        MISSING_PERMISSION: {
+            code: 'E_MISSING_PERMISSION',
+            message: 'Missing premission.',
+            status: 404
+        },
+        ALREADY_HAS_PERMISSION: {
+            code: 'E_ALREADY_HAS_PERMISSION',
+            message: 'Premissions already exists.',
+            status: 401
+        },
         MISSING_PREMISSION_DEPARTMENT: {
-            code: 'MISSING_PREMISSION_DEPARTMENT',
-            message: 'User does not have correct premissions for this department.',
+            code: 'E_MISSING_PREMISSION_DEPARTMENT',
+            message: 'User does not have correct permissions for this department.',
             status: 401
         },
         MISSING_PREMISSION_DEPARTMENTS: {
-            code: 'MISSING_PREMISSION_DEPARTMENTS',
-            message: 'User does not have correct premissions for these departments.',
+            code: 'E_MISSING_PREMISSION_DEPARTMENTS',
+            message: 'User does not have correct permissions for these departments.',
             status: 401
         },
         MISSING_PREMISSION_BUILDING: {
-            code: 'MISSING_PREMISSION_BUILDING',
-            message: 'User does not have correct premissions for this building.',
+            code: 'E_MISSING_PREMISSION_BUILDING',
+            message: 'User does not have correct permissions for this building.',
             status: 401
         },
         MISSING_PREMISSION_BUILDINGS: {
-            code: 'MISSING_PREMISSION_BUILDINGS',
-            message: 'User does not have correct premissions for these buildings.',
+            code: 'E_MISSING_PREMISSION_BUILDINGS',
+            message: 'User does not have correct permissions for these buildings.',
             status: 401
         },
         MISSING_DEPARTMENT: {

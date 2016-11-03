@@ -13,7 +13,6 @@ module.exports = {
 
         if (!req.user.departments) return next(sails.config.additionals.MISSING_PREMISSION_DEPARTMENTS);
         if (departmentId && req.user.departments.indexOf(parseInt(departmentId)) == -1) return next(sails.config.additionals.MISSING_PREMISSION_DEPARTMENT);
-        if (!req.user.buildings || req.user.buildings.length == 0) return next(sails.config.additionals.MISSING_PREMISSION_BUILDINGS);
         if (buildingId && req.user.buildings.indexOf(parseInt(buildingId)) == -1) return next(sails.config.additionals.MISSING_PREMISSION_BUILDING);
 
         query = 'SELECT item.*, itemtype.name AS typeName, itemtype.description AS typeDescription ' +

@@ -36,7 +36,7 @@ module.exports = {
             type: 'string',
             required: true
         },
-        premissions: {
+        permissions: {
             type: 'array',
             defaultsTo: []
         },

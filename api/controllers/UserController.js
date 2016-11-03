@@ -6,26 +6,35 @@
  */
 
 module.exports = {
-    addPremission: function(req, res, next) {
-        User.findOne({ id: req.user.id }).exec(function(err, user) {
-        		user.premissions = user.premissions ? user.premissions : [];
-            if(user.premissions.indexOf(req.body.premission) != -1) return res.json('User Already Has this premission.');
-            user.premissions.push(req.body.premission);
-          	user.save(function (err) { 
-          		return res.json(user);
-          	});
+    addPermission: function(req, res, next) {
+        if (!req.body.permission) return next(sails.config.additionals.MISSING_PERMISSION);
+
+        Permission.findOne({ id: req.body.permission }).exec(function(err, permission) {
+            if (err || !permission) return next(sails.config.additionals.MISSING_PERMISSION);
+
+            req.user.permissions = req.user.permissions ? req.user.permissions : [];
+            if (req.user.permissions.indexOf(req.body.permission) != -1) return next(sails.config.additionals.ALREADY_HAS_PERMISSION);
+            req.user.permissions.push(req.body.permission);
+            req.user.save(function(err) {
+                if (err) return res.json(err);
+                return res.json(req.user);
+            });
         });
     },
 
-    removePremission: function(req, res, next) {
-        User.findOne({ id: req.user.id }).exec(function(err, user) {
-        		user.premissions = user.premissions ? user.premissions : [];
-        		var index = user.premissions.indexOf(req.body.premission);
-            if(index == -1) return res.json('User does not have this premission.');
-            user.premissions.splice(index, 1);
-          	user.save(function (err) { 
-          		return res.json(user);
-          	});
+    removePermission: function(req, res, next) {
+        if (!req.body.permission) return next(sails.config.additionals.MISSING_PERMISSION);
+
+         Permission.findOne({ id: req.body.permission }).exec(function(err, permission) {
+            if (err || !permission) return next(sails.config.additionals.MISSING_PERMISSION);
+
+            req.user.permissions = req.user.permissions ? req.user.permissions : [];
+            var index = req.user.permissions.indexOf(req.body.permission);
+            if (index == -1) return next(sails.config.additionals.MISSING_PERMISSION);
+            req.user.permissions.splice(index, 1);
+            req.user.save(function(err) {
+                return res.json(req.user);
+            });
         });
     }
 };

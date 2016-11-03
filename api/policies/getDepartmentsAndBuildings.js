@@ -1,17 +1,20 @@
 "use strict";
 
 module.exports = function getDepartmentsAndBuildings(req, res, next) {
-    var query = 'SELECT premission.department, premission.building ' +
-        'FROM premission WHERE premission.id IN (' + req.user.premissions + ')';
+    if (req.user.permissions.length == 0) return next();
 
-    Premission.query(query, function(err, premissions) {
+    var query = 'SELECT permission.department, permission.building ' +
+        'FROM permission WHERE permission.id IN (' + req.user.permissions + ')';
+
+    Permission.query(query, function(err, permissions) {
         req.user.departments = [];
         req.user.buildings = [];
 
-        for (var i = 0; i < premissions.length; i++) {
-            if (premissions[i].department != null) req.user.departments.push(premissions[i].department);
-            if (premissions[i].building != null) req.user.buildings.push(premissions[i].building);
+        for (var i = 0; i < permissions.length; i++) {
+            if (permissions[i].department != null) req.user.departments.push(permissions[i].department);
+            if (permissions[i].building != null) req.user.buildings.push(permissions[i].building);
         }
+
         return next();
     });
 };
