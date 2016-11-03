@@ -36,10 +36,8 @@ module.exports = {
             type: 'string',
             required: true
         },
-        admin: {
-            type: 'boolean',
-            defaultsTo: false,
-            boolean: true
+        premissions: {
+            type: 'json'
         },
 
         toJSON() {

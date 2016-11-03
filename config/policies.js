@@ -20,7 +20,7 @@ module.exports = {
     },
 
     ItemController: {
-    	'search': ['getDepartments']
+    	'search': ['isAuthenticated', 'getDepartments']
     }
   }
 };

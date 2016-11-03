@@ -20,9 +20,13 @@ module.exports = {
             'ON item.room = room.id ' +
             'INNER JOIN itemtype ON itemtype.id = item.type ';
 
+        if (!departmentId) {
+            query = query + ' WHERE (department.id IN (' + req.user.departments + '))';
+        }
+
         if (departmentId) {
             query = query + ' WHERE (department.id = ' + departmentId;
-            if (buildingId) query = query + ' AND building.id = ' + buildingId;
+            if (buildingId) query = query + ' AND building.id = ' + buildingId; else query = query + ' AND building.id IN (' + req.user.buildings + ')';
             if (roomId) query = query + ' AND room.id = ' + roomId;
             query = query + ')';
         }
