@@ -30,37 +30,37 @@ module.exports = {
             required: true
         },
 
-        user: {
+        users: {
             type: 'json',
             defaultsTo: null
         },
 
-        premission: {
+        premissions: {
             type: 'json',
             defaultsTo: null
         },
 
-        department: {
+        departments: {
             type: 'json',
             defaultsTo: null
         },
 
-        building: {
+        buildings: {
             type: 'json',
             defaultsTo: null
         },
 
-        room: {
+        rooms: {
             type: 'json',
             defaultsTo: null
         },
 
-        item: {
+        items: {
             type: 'json',
             defaultsTo: null
         },
 
-        itemtype: {
+        itemtypes: {
             type: 'json',
             defaultsTo: null
         },
