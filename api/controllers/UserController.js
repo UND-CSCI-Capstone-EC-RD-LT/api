@@ -15,5 +15,17 @@ module.exports = {
           		return res.json(user);
           	});
         });
+    },
+
+    removePremission: function(req, res, next) {
+        User.findOne({ id: req.user.id }).exec(function(err, user) {
+        		user.premissions = user.premissions ? user.premissions : [];
+        		var index = user.premissions.indexOf(req.body.premission);
+            if(index == -1) return res.json('User does not have this premission.');
+            user.premissions.splice(index, 1);
+          	user.save(function (err) { 
+          		return res.json(user);
+          	});
+        });
     }
 };

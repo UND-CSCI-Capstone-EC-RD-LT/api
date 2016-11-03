@@ -37,7 +37,8 @@ module.exports = {
             required: true
         },
         premissions: {
-            type: 'array'
+            type: 'array',
+            defaultsTo: []
         },
 
         toJSON() {

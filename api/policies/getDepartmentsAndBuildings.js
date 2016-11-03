@@ -1,14 +1,12 @@
 "use strict";
 
 module.exports = function getDepartmentsAndBuildings(req, res, next) {
-    var query = 'SELECT user.premissions FROM user WHERE user.id = ' + req.user.id;
+    User.findOne({ id: req.user.id }).exec(function(err, user) {
+        user.premissions = user.premissions ? user.premissions : [];
 
-    User.query(query, function(err, user) {
-        var premissions = user[0].premissions;
-
-        if (premissions.length > 0) {
+        if (user.premissions.length > 0) {
             var query = 'SELECT premission.department, premission.building ' +
-                'FROM premission WHERE premission.id IN (' + premissions.replace(/[\[\]']+/g,'') + ')';
+                'FROM premission WHERE premission.id IN (' + user.premissions + ')';
 
             Premission.query(query, function(err, premission) {
                 req.user.departments = [];
