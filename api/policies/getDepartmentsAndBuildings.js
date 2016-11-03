@@ -1,8 +1,6 @@
 "use strict";
 
 module.exports = function getDepartmentsAndBuildings(req, res, next) {
-    var departmentId = req.param('did');
-
     var query = 'SELECT user.premissions FROM user WHERE user.id = ' + req.user.id;
 
     User.query(query, function(err, user) {
