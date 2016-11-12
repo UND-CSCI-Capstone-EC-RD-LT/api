@@ -11,6 +11,6 @@ module.exports = {
     level: 'verbose'
   },
   models: {
-    connection: 'devmysql'
+    connection: 'demomysql'
   }
 };

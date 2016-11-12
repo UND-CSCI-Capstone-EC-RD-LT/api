@@ -81,6 +81,21 @@ module.exports = {
      * MySQL configuration
      * @type {Object}
      */
+    demomysql: {
+      adapter: 'sails-mysql',
+      host: 'localhost',
+      port: 3306,
+      user: 'undims',
+      password: 'ray$$lundean**carlson@@hj$js54k#k2j3$Mkals%^234',
+      database: 'undims',
+      charset: 'utf8',
+      collation: 'utf8_swedish_ci'
+    },
+
+    /**
+     * MySQL configuration
+     * @type {Object}
+     */
     devmysql: {
       adapter: 'sails-mysql',
       host: '54.174.7.166',
