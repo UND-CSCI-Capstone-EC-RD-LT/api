@@ -24,7 +24,7 @@ describe(prefix + '/itemtypes', function() {
     describe('/:itemTypeId/items', function() {
         it('200', function(done) {
             request(sails.hooks.http.app)
-                .get(prefix + '/itemtypes/1/items')
+                .post(prefix + '/itemtypes/1/items')
                 .expect(200)
                 .end(function(err, res) {
                     if (err) return done(err);
@@ -34,7 +34,7 @@ describe(prefix + '/itemtypes', function() {
 
         it('404', function(done) {
             request(sails.hooks.http.app)
-                .get(prefix + '/itemtypes/99/items')
+                .post(prefix + '/itemtypes/99/items')
                 .expect(404)
                 .end(function(err, res) {
                     if (err) return done(err);

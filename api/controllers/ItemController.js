@@ -39,5 +39,14 @@ module.exports = {
             if (err || !items || items.length == 0) return next(sails.config.additionals.ITEMS_SEARCH_NOT_FOUND);
             return res.ok(items);
         });
+    },
+
+    barcode: function(req, res, next) {
+        var barcode = req.param('barcode');
+
+        Item.find().where({'barcode' : barcode}).exec(function(err, items) {
+            if (err || !items || items.length == 0) return next(sails.config.additionals.ITEM_NOT_FOUND);
+            return res.ok(items);
+        });
     }
 };
