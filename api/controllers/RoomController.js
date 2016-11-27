@@ -20,7 +20,7 @@ module.exports = {
 
     items: function(req, res, next) {
         Room.find().populate('items').exec(function(err, rooms) {
-            if (err || !rooms) return next(sails.config.additionals.ROOM_NOT_FOUND);
+            if (err || !rooms || rooms.length == 0) return next(sails.config.additionals.ROOM_NOT_FOUND);
             return res.ok(rooms);
         });
     },

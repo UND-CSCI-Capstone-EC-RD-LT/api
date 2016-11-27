@@ -47,8 +47,12 @@ module.exports = {
                         if (err || !building) return next(sails.config.additionals.BUILDING_NOT_FOUND);
                         return next();
                     });
+                } else {
+                    return next();
                 }
             });
+        } else {
+            return next();
         }
     },
 };

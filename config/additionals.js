@@ -9,6 +9,36 @@
 
 module.exports = {
     additionals: {
+        MISSING_PERMISSION: {
+            code: 'E_MISSING_PERMISSION',
+            message: 'Missing premission.',
+            status: 404
+        },
+        ALREADY_HAS_PERMISSION: {
+            code: 'E_ALREADY_HAS_PERMISSION',
+            message: 'Premissions already exists.',
+            status: 401
+        },
+        MISSING_PREMISSION_DEPARTMENT: {
+            code: 'E_MISSING_PREMISSION_DEPARTMENT',
+            message: 'User does not have correct permissions for this department.',
+            status: 401
+        },
+        MISSING_PREMISSION_DEPARTMENTS: {
+            code: 'E_MISSING_PREMISSION_DEPARTMENTS',
+            message: 'User does not have correct permissions for these departments.',
+            status: 401
+        },
+        MISSING_PREMISSION_BUILDING: {
+            code: 'E_MISSING_PREMISSION_BUILDING',
+            message: 'User does not have correct permissions for this building.',
+            status: 401
+        },
+        MISSING_PREMISSION_BUILDINGS: {
+            code: 'E_MISSING_PREMISSION_BUILDINGS',
+            message: 'User does not have correct permissions for these buildings.',
+            status: 401
+        },
         MISSING_DEPARTMENT: {
             code: 'E_MISSING_DEPARTMENT',
             message: 'Please provide a department',
@@ -66,6 +96,11 @@ module.exports = {
             message: 'Items not found for event and category',
             status: 404
         },
+        ITEMS_SEARCH_NOT_FOUND: {
+            code: 'E_ITEMS_SEARCH_NOT_FOUND',
+            message: 'Not Items found with for given search',
+            status: 404
+        },
         ITEM_NOT_FOUND: {
             code: 'E_ITEM_NOT_FOUND',
             message: 'Item not found',
@@ -89,7 +124,7 @@ module.exports = {
         ROOM_NOT_FOUND: {
             code: 'E_ROOM_NOT_FOUND',
             message: 'Please supply a room name',
-            status: 400
+            status: 404
         },
         CANT_ADD_ROOM: {
             code: 'E_CANT_ADD_ROOM',

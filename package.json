@@ -1,5 +1,5 @@
 {
-  "name": "UND-IMS-API",
+  "name": "api",
   "version": "0.1.0",
   "main": "app.js",
   "dependencies": {
@@ -34,12 +34,13 @@
     "sails-service-hash": "^3.2.1"
   },
   "devDependencies": {
-    "esdoc": "0.4.3",
     "chai": "3.4.1",
+    "esdoc": "0.4.3",
     "istanbul": "0.4.2",
     "mocha": "2.3.4",
     "sails-memory": "0.10.5",
-    "sinon": "1.17.2"
+    "sinon": "1.17.2",
+    "supertest": "^2.0.1"
   },
   "scripts": {
     "clean": "rm -rf ./.tmp",

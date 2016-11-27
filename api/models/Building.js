@@ -48,8 +48,12 @@ module.exports = {
                         if (err || !department) return next(sails.config.additionals.DEPARTMENT_NOT_FOUND);
                         return next();
                     });
+                } else {
+                    return next();
                 }
             });
+        } else {
+            return next();
         }
     },
 };

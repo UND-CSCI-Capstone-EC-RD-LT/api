@@ -45,6 +45,7 @@
 				"e302a55f-6c17-d87b-dd04-c93918f51200",
 				"e8bcadf2-a6cc-c37a-dd75-bda52cde4a6d",
 				"60dbde13-6565-3973-0226-683d7a2060a2",
+				"8f33adda-eec6-7b99-d470-e9907f8cd76c",
 				"052a71a9-9484-2504-e90d-d7613f02aa9b",
 				"e4b60443-429f-9c48-7372-ca02ddf89938"
 			],
@@ -62,6 +63,20 @@
 				"bd7d44e8-7b7e-9e2f-cb7f-a8248286af9e",
 				"8bb9abf7-f9c6-8508-f9e0-1bb642f689bd",
 				"98a3f1b0-1309-1bc4-1e96-9f33beadfedc"
+			],
+			"owner": "741329",
+			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc"
+		},
+		{
+			"id": "11c7f4c5-ee76-ddc8-264b-38bcdda23703",
+			"name": "Permission",
+			"description": "",
+			"order": [
+				"b6fef028-b5e9-43b2-0df4-ff663c0bc9de",
+				"0443b37a-ba22-9f3f-39c0-d335a5f78d47",
+				"8111576d-3811-ddc9-437b-af47c93efc39",
+				"77f98bd9-a923-cfe9-3bae-4a8a4b2db31b",
+				"e1931ace-08c6-844d-2f52-b2f6e4ce8503"
 			],
 			"owner": "741329",
 			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc"
@@ -96,6 +111,8 @@
 				"3eac8394-5048-3b09-ce36-822d1f30cf7c",
 				"00b54dec-9a26-fc02-0300-16518cdbbb77",
 				"faf3dd41-7b34-16af-2390-34ec3cb324ee",
+				"d1ecf831-dd02-174e-13ad-41b9f43ce4c8",
+				"13096480-3482-97dc-8044-bfae92d99d8d",
 				"5e1be4f7-e1fe-9fdc-e659-6e5935acc13a",
 				"033efd32-9011-5dc3-7e29-4db3dbc27017"
 			],
@@ -166,6 +183,43 @@
 			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc"
 		},
 		{
+			"id": "0443b37a-ba22-9f3f-39c0-d335a5f78d47",
+			"headers": "Authorization: JWT {{token}}\n",
+			"url": "{{server}}/v1/permissions/1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "type",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "room",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "creator",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1478192132841,
+			"name": "Get Permission",
+			"description": "Get Permission based on id.",
+			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc",
+			"responses": []
+		},
+		{
 			"folder": "6edaab4c-9b71-ba1a-95bc-3cfb085b87b3",
 			"id": "052a71a9-9484-2504-e90d-d7613f02aa9b",
 			"name": "Update Item",
@@ -224,6 +278,31 @@
 			"helperAttributes": "{}",
 			"responses": [],
 			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc"
+		},
+		{
+			"id": "13096480-3482-97dc-8044-bfae92d99d8d",
+			"headers": "Authorization: JWT {{token}}\n",
+			"url": "{{server}}/v1/users/removePermission",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "permission",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1478191409246,
+			"name": "Remove User Premission",
+			"description": "Remove the Premission from the User.",
+			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc",
+			"responses": []
 		},
 		{
 			"folder": "961bca33-528c-ba20-7c82-04b0f95c26ea",
@@ -465,31 +544,29 @@
 			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc"
 		},
 		{
-			"folder": "edcf2299-6171-3ff9-29bb-95f09c8d3329",
 			"id": "5e1be4f7-e1fe-9fdc-e659-6e5935acc13a",
-			"name": "Update User",
-			"dataMode": "urlencoded",
+			"headers": "Authorization: JWT {{token}}\n",
+			"url": "{{server}}/v1/users/1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
 			"data": [
 				{
-					"key": "password",
-					"value": "test12",
+					"key": "premissions",
+					"value": "2, 4",
 					"type": "text",
 					"enabled": true
 				}
 			],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "This will update a user with new changes. Example:\n\t- password = updatedPassword\n\t- email = updatedEmail\nSupportes one or maney changes at the same time.",
-			"headers": "Authorization: JWT {{token}}\n",
-			"method": "PUT",
-			"pathVariables": {},
-			"url": "{{server}}/v1/users/1",
-			"preRequestScript": "",
+			"dataMode": "urlencoded",
 			"tests": "",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"responses": [],
-			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc"
+			"helperAttributes": {},
+			"time": 1478130904768,
+			"name": "Update User",
+			"description": "This will update a user with new changes. Example:\n\t- password = updatedPassword\n\t- email = updatedEmail\nSupportes one or maney changes at the same time.",
+			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc",
+			"responses": []
 		},
 		{
 			"folder": "6edaab4c-9b71-ba1a-95bc-3cfb085b87b3",
@@ -584,6 +661,31 @@
 			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc"
 		},
 		{
+			"id": "77f98bd9-a923-cfe9-3bae-4a8a4b2db31b",
+			"headers": "Authorization: JWT {{token}}\n",
+			"url": "{{server}}/v1/permissions/1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "user",
+					"value": "{ edit, create, delete }",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1478192252148,
+			"name": "Update Permission",
+			"description": "Updates the Permission\nExample:\nUsers: {create,edit,delete}\n\nModelName: {JSON OF CREATE,EDIT,DELETE}",
+			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc",
+			"responses": []
+		},
+		{
 			"id": "7998944d-c591-16b6-1128-e61557800d44",
 			"headers": "Authorization: JWT {{token}}\n",
 			"url": "{{server}}/v1/buildings/department/1",
@@ -634,6 +736,43 @@
 			"helperAttributes": "{}",
 			"responses": [],
 			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc"
+		},
+		{
+			"id": "8111576d-3811-ddc9-437b-af47c93efc39",
+			"headers": "Authorization: JWT {{token}}\n",
+			"url": "{{server}}/v1/permissions",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "type",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "room",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "creator",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1478192247627,
+			"name": "Get Permissions",
+			"description": "Get all permissions.",
+			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc",
+			"responses": []
 		},
 		{
 			"folder": "a075c4ce-cdac-ec93-ca87-602a91304f2f",
@@ -688,6 +827,43 @@
 			"helperAttributes": "{}",
 			"responses": [],
 			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc"
+		},
+		{
+			"id": "8f33adda-eec6-7b99-d470-e9907f8cd76c",
+			"headers": "Authorization: JWT {{token}}\n",
+			"url": "{{server}}/v1/items/search/1/1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "type",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "room",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "creator",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1478038329196,
+			"name": "Search Items",
+			"description": "This will get the Item given. Example:\n\t- {{server}/v1/items/search/{{Department}}/{{BuildingId}}/{{RoomId}}",
+			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc",
+			"responses": []
 		},
 		{
 			"folder": "9290395e-e76f-dba3-5a7a-fea9d286673d",
@@ -879,6 +1055,43 @@
 			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc"
 		},
 		{
+			"id": "b6fef028-b5e9-43b2-0df4-ff663c0bc9de",
+			"headers": "Authorization: JWT {{token}}\n",
+			"url": "{{server}}/v1/permissions",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "creator",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "department",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "test",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1478192074511,
+			"name": "Create Permission",
+			"description": "Create a Permission\nRequired:\n-creator\n-department\n-name",
+			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc",
+			"responses": []
+		},
+		{
 			"folder": "fb25d8b4-2cb2-eee6-62df-d80a74e1317a",
 			"id": "b9d851c3-42d4-5dd9-e55a-95bce3cdf8ee",
 			"name": "Get Building with Rooms",
@@ -998,6 +1211,31 @@
 			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc"
 		},
 		{
+			"id": "d1ecf831-dd02-174e-13ad-41b9f43ce4c8",
+			"headers": "Authorization: JWT {{token}}\n",
+			"url": "{{server}}/v1/users/addPermission",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "permission",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1478191398409,
+			"name": "Add User Premission",
+			"description": "Adds the Premission to the User.",
+			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc",
+			"responses": []
+		},
+		{
 			"folder": "9290395e-e76f-dba3-5a7a-fea9d286673d",
 			"id": "d2dbda55-bd41-e02f-785c-149f5c316160",
 			"name": "Get Rooms with Items",
@@ -1062,6 +1300,24 @@
 			"helperAttributes": "{}",
 			"responses": [],
 			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc"
+		},
+		{
+			"id": "e1931ace-08c6-844d-2f52-b2f6e4ce8503",
+			"headers": "Authorization: JWT {{token}}\n",
+			"url": "{{server}}/v1/permissions/1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1478192256458,
+			"name": "Delete Permission",
+			"description": "Delete the Permission",
+			"collectionId": "bf83e458-a883-b04d-ed84-63406739becc",
+			"responses": []
 		},
 		{
 			"folder": "fb25d8b4-2cb2-eee6-62df-d80a74e1317a",
