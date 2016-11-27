@@ -25,7 +25,7 @@ module.exports = {
             ' department.name as departmentName' +
             ' FROM item' +
             ' JOIN user on user.id = item.creator' +
-            ' LEFT OUTER JOIN itemtype on itemtype.id = item.type' +
+            ' JOIN itemtype on itemtype.id = item.type' +
             ' JOIN room on room.id = item.room' +
             ' JOIN building on building.id = room.building' +
             ' JOIN department on department.id = building.department' +
@@ -49,7 +49,7 @@ module.exports = {
             ' item.type as itemTypeId' +
             ' FROM item' +
             ' JOIN user on user.id = item.creator' +
-            ' LEFT OUTER JOIN itemtype on itemtype.id = item.type';
+            ' JOIN itemtype on itemtype.id = item.type';
 
         Item.query(query, function(err, items) {
             if (err || !items || items.length == 0) return next(sails.config.additionals.ITEMS_SEARCH_NOT_FOUND);
