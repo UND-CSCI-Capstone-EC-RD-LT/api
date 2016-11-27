@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = function getDepartmentsAndBuildings(req, res, next) {
-    if (req.user.permissions.length == 0) return next();
+    if (req.user.permissions == null) return next();
 
     var query = 'SELECT permission.department, permission.building ' +
         'FROM permission WHERE permission.id IN (' + req.user.permissions + ')';
