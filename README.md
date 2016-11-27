@@ -1,6 +1,7 @@
 # UND Inventory Management System API
 
 TODO: Project Description here
+Demo server url: http://54.174.7.166
 
 ## Working with API
 
