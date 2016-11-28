@@ -10,6 +10,7 @@ module.exports = {
         var item = req.param('item');
 
         var query = 'SELECT item.barcode,' +
+            ' item.id,' +
             ' item.creator,' +
             ' CONCAT(user.firstName, \' \', user.lastName) as creatorName,' +
             ' item.boughtPrice,' +
@@ -40,6 +41,7 @@ module.exports = {
     find: function(req, res, next) {
 
         var query = 'SELECT item.barcode,' +
+            ' item.id,' +
             ' item.creator,' +
             ' CONCAT(user.firstName, \' \', user.lastName) as creatorName,' +
             ' item.boughtPrice,' +
@@ -97,6 +99,7 @@ module.exports = {
         var barcode = req.param('barcode');
 
         var query = 'SELECT item.barcode,' +
+            ' item.id,' +
             ' item.creator,' +
             ' CONCAT(user.firstName, \' \', user.lastName) as creatorName,' +
             ' item.boughtPrice,' +
