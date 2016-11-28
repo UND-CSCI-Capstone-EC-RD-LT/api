@@ -119,9 +119,9 @@ module.exports = {
             ' JOIN room on room.id = item.room' +
             ' JOIN building on building.id = room.building' +
             ' JOIN department on department.id = building.department' +
-            ' WHERE item.barcode = ' + barcode;
+            ' WHERE item.barcode = ?';
 
-        Item.query(query, function(err, items) {
+        Item.query(query, [barcode], function(err, items) {
             if (err || !items || items.length == 0) return next(sails.config.additionals.ITEMS_SEARCH_NOT_FOUND);
             return res.ok(items);
         });
