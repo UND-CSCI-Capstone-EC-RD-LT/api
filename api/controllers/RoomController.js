@@ -12,7 +12,7 @@ module.exports = {
             return next(sails.config.additionals.MISSING_ROOM);
         }
 
-        Room.findOne(roomId).populate('items').exec(function(err, room) {
+        Room.findOne(roomId).populate('items', {sort: 'type DESC'}).exec(function(err, room) {
             if (err || !room) return next(sails.config.additionals.ROOM_NOT_FOUND);
             return res.ok(room);
         });
@@ -32,7 +32,7 @@ module.exports = {
             return next(sails.config.additionals.MISSING_ROOM);
         }
 
-        Room.findOne(roomId).populate('items', {where: {type: typeId}}).exec(function(err, room) {
+        Room.findOne({ where: { id: roomId } }).populate('items', { where: { type: typeId } }).exec(function(err, room) {
             if (err || !room) return next(sails.config.additionals.ROOM_NOT_FOUND);
             return res.ok(room);
         });
@@ -41,7 +41,7 @@ module.exports = {
     building: function(req, res, next) {
         var buildingId = req.param('id');
         if (!buildingId) {
-            return next(sails.config.additionals.MISSING_BUILDING); 
+            return next(sails.config.additionals.MISSING_BUILDING);
         }
         Building.findOne(buildingId).populate('rooms').exec(function(err, building) {
             if (err || !building) return next(sails.config.additionals.BUILDING_NOT_FOUND);
