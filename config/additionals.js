@@ -12,7 +12,7 @@ module.exports = {
         MISSING_PERMISSION: {
             code: 'E_MISSING_PERMISSION',
             message: 'Missing premission.',
-            status: 204
+            status: 200
         },
         ALREADY_HAS_PERMISSION: {
             code: 'E_ALREADY_HAS_PERMISSION',
@@ -47,7 +47,7 @@ module.exports = {
         DEPARTMENT_NOT_FOUND: {
             code: 'E_DEPARTMENT_NOT_FOUND',
             message: 'Department could not be found',
-            status: 204
+            status: 200
         },
         MISSING_BUILDING: {
             code: 'E_MISSING_BUILDING',
@@ -57,7 +57,7 @@ module.exports = {
         BUILDING_NOT_FOUND: {
             code: 'E_BUILDING_NOT_FOUND',
             message: 'Building could not be found',
-            status: 204
+            status: 200
         },
         MISSING_ROOM: {
             code: 'E_MISSING_ROOM',
@@ -67,7 +67,7 @@ module.exports = {
         ROOM_NOT_FOUND: {
             code: 'E_ROOM_NOT_FOUND',
             message: 'Room could not be found',
-            status: 204
+            status: 200
         },
         MISSING_ITEMTYPE: {
             code: 'E_MISSING_ITEMTYPE',
@@ -77,7 +77,7 @@ module.exports = {
         ITEMTYPE_NOT_FOUND: {
             code: 'E_ITEMTYPE_NOT_FOUND',
             message: 'Item type could not be found.',
-            status: 204
+            status: 200
         },
 
 
@@ -89,27 +89,27 @@ module.exports = {
         USER_NOT_FOUND: {
             code: 'E_USER_NOT_FOUND',
             message: 'User with specified id is not found',
-            status: 204
+            status: 200
         },
         ITEMS_NOT_FOUND: {
             code: 'E_ITEMS_NOT_FOUND',
             message: 'Items not found for event and category',
-            status: 204
+            status: 200
         },
         ITEMS_SEARCH_NOT_FOUND: {
             code: 'E_ITEMS_SEARCH_NOT_FOUND',
             message: 'Not Items found with for given search',
-            status: 204
+            status: 200
         },
         ITEM_NOT_FOUND: {
             code: 'E_ITEM_NOT_FOUND',
             message: 'Item not found',
-            status: 204
+            status: 200
         },
         BID_NOT_FOUND: {
             code: 'E_BID_NOT_FOUND',
             message: 'Bids not found for item',
-            status: 204
+            status: 200
         },
         MISSING_AMOUNT: {
             code: 'E_MISSING_AMOUNT',
@@ -124,7 +124,7 @@ module.exports = {
         ROOM_NOT_FOUND: {
             code: 'E_ROOM_NOT_FOUND',
             message: 'Please supply a room name',
-            status: 204
+            status: 200
         },
         CANT_ADD_ROOM: {
             code: 'E_CANT_ADD_ROOM',
