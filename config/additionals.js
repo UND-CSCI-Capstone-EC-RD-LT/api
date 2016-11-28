@@ -42,7 +42,7 @@ module.exports = {
         MISSING_DEPARTMENT: {
             code: 'E_MISSING_DEPARTMENT',
             message: 'Please provide a department',
-            status: 500
+            status: 200
         },
         DEPARTMENT_NOT_FOUND: {
             code: 'E_DEPARTMENT_NOT_FOUND',
@@ -52,7 +52,7 @@ module.exports = {
         MISSING_BUILDING: {
             code: 'E_MISSING_BUILDING',
             message: 'Please provide a building',
-            status: 500
+            status: 200
         },
         BUILDING_NOT_FOUND: {
             code: 'E_BUILDING_NOT_FOUND',
@@ -62,7 +62,7 @@ module.exports = {
         MISSING_ROOM: {
             code: 'E_MISSING_ROOM',
             message: 'Please provide a room',
-            status: 500
+            status: 200
         },
         ROOM_NOT_FOUND: {
             code: 'E_ROOM_NOT_FOUND',
@@ -72,7 +72,7 @@ module.exports = {
         MISSING_ITEMTYPE: {
             code: 'E_MISSING_ITEMTYPE',
             message: 'Please provide an item type.',
-            status: 500
+            status: 200
         },
         ITEMTYPE_NOT_FOUND: {
             code: 'E_ITEMTYPE_NOT_FOUND',
@@ -114,12 +114,12 @@ module.exports = {
         MISSING_AMOUNT: {
             code: 'E_MISSING_AMOUNT',
             message: 'Please provide an amount',
-            status: 500
+            status: 200
         },
         ITEM_NOT_CREATED: {
             code: 'E_ITEM_NOT_CREATED',
             message: 'Can\'t update current bid for item',
-            status: 500
+            status: 200
         },
         ROOM_NOT_FOUND: {
             code: 'E_ROOM_NOT_FOUND',
@@ -129,12 +129,12 @@ module.exports = {
         CANT_ADD_ROOM: {
             code: 'E_CANT_ADD_ROOM',
             message: "Can't add room to user",
-            status: 500
+            status: 200
         },
         CANT_REMOVE_ROOM: {
             code: 'E_CANT_REMOVE_ROOM',
             message: "Can't remove room from user",
-            status: 500
+            status: 200
         },
     }
 };
