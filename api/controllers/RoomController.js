@@ -12,7 +12,7 @@ module.exports = {
             return next(sails.config.additionals.MISSING_ROOM);
         }
 
-        Room.findOne(roomId).populate('items', {sort: 'type DESC'}).exec(function(err, room) {
+        Room.findOne(roomId).populate('items', {sort: 'type ASC'}).exec(function(err, room) {
             if (err || !room) return next(sails.config.additionals.ROOM_NOT_FOUND);
             return res.ok(room);
         });
