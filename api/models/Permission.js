@@ -32,37 +32,58 @@ module.exports = {
 
         users: {
             type: 'json',
-            defaultsTo: {}
+            defaultsTo: { "view" : false,
+                        "create" : false,
+                        "edit" : false,
+                        "delete" : false }
         },
 
         permissions: {
             type: 'json',
-            defaultsTo: {}
+            defaultsTo: { "view" : false,
+                        "create" : false,
+                        "edit" : false,
+                        "delete" : false }
         },
 
         departments: {
             type: 'json',
-            defaultsTo: {}
+            defaultsTo: { "view" : false,
+                        "create" : false,
+                        "edit" : false,
+                        "delete" : false }
         },
 
         buildings: {
             type: 'json',
-            defaultsTo: {}
+            defaultsTo: { "view" : false,
+                        "create" : false,
+                        "edit" : false,
+                        "delete" : false }
         },
 
         rooms: {
             type: 'json',
-            defaultsTo: {}
+            defaultsTo: { "view" : false,
+                        "create" : false,
+                        "edit" : false,
+                        "delete" : false }
         },
 
         items: {
             type: 'json',
-            defaultsTo: {}
+            defaultsTo: { "view" : false,
+                        "create" : false,
+                        "edit" : false,
+                        "delete" : false }
         },
 
         itemtypes: {
             type: 'json',
-            defaultsTo: {}
+            defaultsTo: { "view" : false,
+                        "create" : false,
+                        "edit" : false,
+                        "delete" : false }
         },
 
         toJSON() {

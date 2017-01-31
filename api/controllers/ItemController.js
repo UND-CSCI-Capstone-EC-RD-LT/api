@@ -64,9 +64,9 @@ module.exports = {
         var buildingId = req.param('bid');
         var roomId = req.param('rid');
 
-        if (!req.user.departments) return next(sails.config.additionals.MISSING_PREMISSION_DEPARTMENTS);
-        if (departmentId && req.user.departments.indexOf(parseInt(departmentId)) == -1) return next(sails.config.additionals.MISSING_PREMISSION_DEPARTMENT);
-        if (buildingId && req.user.buildings.indexOf(parseInt(buildingId)) == -1) return next(sails.config.additionals.MISSING_PREMISSION_BUILDING);
+        //if (!req.user.departments) return next(sails.config.additionals.MISSING_PREMISSION_DEPARTMENTS);
+        //if (departmentId && req.user.departments.indexOf(parseInt(departmentId)) == -1) return next(sails.config.additionals.MISSING_PREMISSION_DEPARTMENT);
+        if (buildingId && req.user.buildings.length > 0 && req.user.buildings.indexOf(parseInt(buildingId)) == -1) return next(sails.config.additionals.MISSING_PREMISSION_BUILDING);
 
         var query = 'SELECT item.*, itemtype.name AS typeName, itemtype.description AS typeDescription ' +
             'FROM item ' +
@@ -83,9 +83,14 @@ module.exports = {
 
         if (departmentId) {
             query = query + ' WHERE (department.id = ' + departmentId;
-            if (buildingId) query = query + ' AND building.id = ' + buildingId;
-            else query = query + ' AND building.id IN (' + req.user.buildings + ')';
-            if (roomId) query = query + ' AND room.id = ' + roomId;
+            if (buildingId) {
+                query = query + ' AND building.id = ' + buildingId;
+            } else if (req.user.buildings.length > 0) {
+                query = query + ' AND building.id IN (' + req.user.buildings + ')';
+            }
+            if (roomId) {
+                query = query + ' AND room.id = ' + roomId;
+            }
             query = query + ')';
         }
 
