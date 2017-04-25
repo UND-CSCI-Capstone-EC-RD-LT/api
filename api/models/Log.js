@@ -15,6 +15,11 @@ module.exports = {
       required: true
     },
 
+    ip: {
+      type: 'string',
+      required: true
+    },
+
     action: {
       type: 'string',
       required: true

@@ -5,6 +5,7 @@ module.exports = function log(req, res, next) {
 
   let data = {
     user: req.user.id,
+    ip: req.ip,
     action: req.options.action,
     model: req.options.model,
     params: JSON.parse(`{${Object.keys(req.params).map(key => `"${key}":${req.params[key]}`).join(',')}}`)
