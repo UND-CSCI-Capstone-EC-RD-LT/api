@@ -79,6 +79,11 @@ module.exports = {
             message: 'Item type could not be found.',
             status: 200
         },
+        LOGS_NOT_FOUND: {
+          code: 'E_LOGS_NOT_FOUND',
+          message: 'No logs could be found.',
+          status: 200
+        },
 
 
         BAD_CREDENTIALS: {
