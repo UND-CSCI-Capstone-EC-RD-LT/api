@@ -13,14 +13,14 @@
 
 module.exports = {
   policies: {
-    '*': ['isAuthenticated'],
+    '*': ['isAuthenticated', 'log'],
 
     AuthController: {
       '*': true
     },
 
     ItemController: {
-    	'search': ['isAuthenticated', 'getDepartmentsAndBuildings']
+      'search': ['isAuthenticated', 'log', 'getDepartmentsAndBuildings']
     }
   }
 };
