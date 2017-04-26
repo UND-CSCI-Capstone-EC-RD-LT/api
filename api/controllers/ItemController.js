@@ -64,9 +64,9 @@ module.exports = {
         var buildingId = req.param('bid');
         var roomId = req.param('rid');
 
-        if (!req.user.departments) return next(sails.config.additionals.MISSING_PREMISSION_DEPARTMENTS);
-        if (departmentId && req.user.departments.indexOf(parseInt(departmentId)) == -1) return next(sails.config.additionals.MISSING_PREMISSION_DEPARTMENT);
-        if (buildingId && req.user.buildings.indexOf(parseInt(buildingId)) == -1) return next(sails.config.additionals.MISSING_PREMISSION_BUILDING);
+        //if (!req.user.departments) return next(sails.config.additionals.MISSING_PREMISSION_DEPARTMENTS);
+        //if (departmentId && req.user.departments.indexOf(parseInt(departmentId)) == -1) return next(sails.config.additionals.MISSING_PREMISSION_DEPARTMENT);
+        //if (buildingId && req.user.buildings.indexOf(parseInt(buildingId)) == -1) return next(sails.config.additionals.MISSING_PREMISSION_BUILDING);
 
         var query = 'SELECT item.*, itemtype.name AS typeName, itemtype.description AS typeDescription ' +
             'FROM item ' +

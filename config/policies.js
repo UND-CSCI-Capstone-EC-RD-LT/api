@@ -19,8 +19,10 @@ module.exports = {
       '*': true
     },
 
+    /*
     ItemController: {
       'search': ['isAuthenticated', 'log', 'getDepartmentsAndBuildings']
     }
+    */
   }
 };
