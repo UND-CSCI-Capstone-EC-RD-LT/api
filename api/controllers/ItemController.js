@@ -96,7 +96,7 @@ module.exports = {
     },
 
     barcode: function(req, res, next) {
-        var barcode = req.param('barcode');
+        var barcode = 'M'+req.param('barcode');
 
         var query = 'SELECT item.barcode,' +
             ' item.id,' +

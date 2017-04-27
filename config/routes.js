@@ -25,7 +25,7 @@ module.exports = {
     'GET /v1/items/search/:did' : 'ItemController.search',
     'GET /v1/items/search/:did/:bid' : 'ItemController.search',
     'GET /v1/items/search/:did/:bid/:rid' : 'ItemController.search',
-    'GET /v1/items/barcode/:barcode' : 'ItemController.barcode',
+    'GET /v1/items/barcode/M:barcode' : 'ItemController.barcode',
     'GET /v1/items/:item' : 'ItemController.findOne',
 
     'GET /v1/logs/:model' : 'LogController.model',
